@@ -21,7 +21,7 @@
 title: Learning Languages
 name: "Alec Martin"
 description: >- # this means to ignore newlines until "baseurl:"
-  I am Alec Martin using this site to log my progress while learning computer languages and systems
+  This site is where I present my progress while learning new programming languages and other technologies.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://alec-m13.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  alec-m13
