@@ -2,6 +2,14 @@
 layout: default
 ---
 
+This content is just the template I'm using -- the real content is still under construction.
+________________________________
+
+...
+__________________
+...
+_________________
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
