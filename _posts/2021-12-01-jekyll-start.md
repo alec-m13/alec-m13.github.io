@@ -1,6 +1,6 @@
 ---
 layout: post
-category: Jekyll
+category: jekyll
 title:  "Starting Jekyll"
 ---
 

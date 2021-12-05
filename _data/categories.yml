@@ -1,0 +1,7 @@
+jekyll:
+  title: "Jekyll"
+  description: "Jekyll is a static site builder. It involves lots of other technologies which were new to me: Liquid, SASS, YAML, Ruby. This site is built with Jekyll."
+
+angular:
+  title: "Angular"
+  description: "Angular is a web app framework. It uses Typescript, which was new to me when I started, as well as HTML and SCSS."

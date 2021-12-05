@@ -1,3 +1,21 @@
+{% assign category = site.data.categories[page.category] %}
+
+{% for post in site.categories[page.category] %}
+  {% if post.url == page.url %}
+    {% assign post_index0 = forloop.index0 %}
+    {% assign post_index1 = forloop.index %}
+  {% endif %}
+{% endfor %}
+
+{% for post in site.categories[page.category] %}
+  {% if post_index0 == forloop.index %}
+    {% assign next_post = post %}
+  {% endif %}
+  {% if post_index1 == forloop.index0 %}
+    {% assign prev_post = post %}
+  {% endif %}
+{% endfor %}
+
 <!doctype html>
 <!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
 <!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
@@ -19,20 +37,28 @@
 
   <div class="wrapper">
     <header>
-      <h1 class="title">Learning {{ page.category }}</h1>
+      <h1 class="title">Learning {{ category.title }}</h1>
     </header>
     <div id="container">
-      <p class="tagline">{{ page.description }}</p>
+      <p class="tagline">{{ category.description }}</p>
       <div id="main" role="main">
         <div class="download-bar">
-        <div class="inner">
-          {% if site.show_downloads %}
-          <a href="{{ site.github.tar_url }}" class="download-button tar"><span>Download</span></a>
-          <a href="{{ site.github.zip_url }}" class="download-button zip"><span>Download</span></a>
-          {% endif %}
-          <a href="{{ site.github.repository_url }}" class="code">View this site on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
+            <div class="nav">
+                <span>
+                {% if prev_post %}
+                    <a href="{{ prev_post.url }}">{{ prev_post.title }}</a>
+                {% endif %}
+                </span>
+                <span>
+                <a href="/">Home</a>
+                </span>
+                <span>
+                {% if next_post %}
+                    <a href="{{ next_post.url }}">{{ next_post.title }}</a>
+                {% endif %}
+                </span>
+            </div>
+            <span class="blc"></span><span class="trc"></span>
         </div>
         <article class="markdown-body">
           {{ content }}

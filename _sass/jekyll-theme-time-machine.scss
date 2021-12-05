@@ -141,6 +141,15 @@ p.tagline {
   filter:alpha(opacity=100);  /* IE 5-7 */
 }
 
+.nav {
+  display: flex;
+  text-align: center;
+}
+
+.nav > * {
+  flex: 1;
+}
+
 .current-section {
   position: fixed;
   top: 0;
