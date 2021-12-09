@@ -27,9 +27,28 @@ url: "https://alec-m13.github.io" # the base hostname & protocol for your site, 
 github_username:  alec-m13
 
 # Build settings
-theme: jekyll-theme-time-machine
 plugins:
   - jekyll-feed
+collections:
+  homes:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "homes"
+    values:
+      layout: "homes"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,3 +1,28 @@
+{% assign category = site.data.categories[page.category] %}
+
+{% capture title %}
+  {% if page.title %}
+    {{ page.title }}
+  {% elsif category %}
+    Learning {{ category.title }}
+  {% else %}
+    {{ site.title | default: site.github.repository_name }}
+  {% endif %}
+{% endcapture %}
+
+{% capture description %}
+  {% if page.description %}
+    {{ page.description }}
+  {% elsif category %}
+    {{ category.description }}
+  {% else %}
+    {{ site.description | default: site.github.project_tagline }}
+  {% endif %}
+{% endcapture %}
+
+{% assign nav = page.nav | default: layout.nav %}
+
+
 <!doctype html>
 <!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
 <!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
@@ -8,7 +33,7 @@
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-  <title>{{ page.title | default: site.title }}</title>
+  <title>{{ title }}</title>
 
 {% seo title=false %}
 
@@ -16,24 +41,16 @@
 </head>
 
 <body>
-
+  <p>{{ navmsg }}</p>
+  <p>{{ navloop }}</p>
   <div class="wrapper">
     <header>
-      <h1 class="title">{{ site.title | default: site.github.repository_name }}</h1>
+      <h1 class="title">{{ title }}</h1>
     </header>
     <div id="container">
-      <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
+      <p class="tagline">{{ description }}</p>
       <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          {% if site.show_downloads %}
-          <a href="{{ site.github.tar_url }}" class="download-button tar"><span>Download</span></a>
-          <a href="{{ site.github.zip_url }}" class="download-button zip"><span>Download</span></a>
-          {% endif %}
-          <a href="{{ site.github.repository_url }}" class="code">View this site on GitHub</a>
-        </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
+        {% include nav.html navtype=nav %}
         <article class="markdown-body">
           {{ content }}
         </article>
@@ -51,7 +68,7 @@
 
       </div>
       <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a> (then heavily customized by me)</small>
       </div>
     </footer>
   </div>

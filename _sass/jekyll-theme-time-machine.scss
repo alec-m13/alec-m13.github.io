@@ -57,31 +57,32 @@ p.tagline {
   background-color: #fff;
 }
 
-.download-bar {
+.banner {
   background: #222;
   border: 5px solid #444;
   padding: 10px;
   margin: 0 -35px 20px;
   position: relative;
+  color: #63a52a;
 }
 
-.download-bar .inner {
+.banner .inner {
   overflow: hidden;
 }
 
-.download-bar .watch-fork iframe {
+.banner .watch-fork iframe {
   display: block;
   float: left;
   border-right: 1px solid #ddd;
   padding-right: 5px;
 }
-.download-bar .watch-fork iframe.last {
+.banner .watch-fork iframe.last {
   border-right: 0 none;
   padding-right: 0;
   padding-left: 5px;
   border-left: 1px solid #fff;
 }
-.download-bar .watch-fork {
+.banner .watch-fork {
   overflow: hidden;
   float: right;
   background-color: #eee;
@@ -89,7 +90,7 @@ p.tagline {
   border-radius: 3px;
 }
 
-.download-bar .blc {
+.banner .blc {
   border: 10px solid black;
   border-color: transparent transparent black;
   width: 0;
@@ -103,7 +104,7 @@ p.tagline {
   -webkit-transform: rotate(45deg); /* 2014 current */
 }
 
-.download-bar .trc {
+.banner .trc {
   border: 10px solid black;
   border-color:  black transparent transparent;
   width: 0;
@@ -117,18 +118,18 @@ p.tagline {
   -webkit-transform: rotate(45deg); /* 2014 current */
 }
 
-.download-bar .avatar {
+.banner .avatar {
   border: 1px solid black;
   display: block;
   padding: 4px;
   float: left;
 }
 
-.download-bar .avatar img {
+.banner .avatar img {
   display: block;
 }
 
-.download-bar a.code {
+.banner a.code {
   background: transparent url(../images/code.png) no-repeat 0 2px;
   padding-left: 35px;
   margin-top: 8px;
