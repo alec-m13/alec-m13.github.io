@@ -1,5 +1,3 @@
-<p>In nav: {{ include.navtype }}</p>
-
 {% case include.navtype %}
     {% when 'category' %}
         {% for opage in site.pages %}
@@ -39,24 +37,27 @@
             {% endif %}
         {% endfor %}
     {% when 'post' %}
-        <p>case post</p>
-
         {% assign post_list = site.categories[page.category] %}
-        {% for post in post_list %}
-            {% if post.url == page.url %}
-                {% assign pindex = forloop.index0 | minus: 1 %}
-                {% assign nindex = pindex | plus: 2 %}
-                {% if forloop.first == false %}
+        {% for p in post_list %}
+            {% if p.url == page.url %}
+                {% unless forloop.first %}
+                    {% assign pindex = forloop.index0 | minus: 1 %}
                     {% assign next_page = post_list[pindex] %}
-                {% endif %}
-                {% if forloop.last == false %}
+                {% endunless %}
+                {% unless forloop.last %}
+                    {% assign nindex = forloop.index0 | plus: 1 %}
                     {% assign prev_page = post_list[nindex] %}
-                {% endif %}
+                {% endunless %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+        {% for opage in site.documents %}
+            {% if opage.defines == page.category %}
+                {% assign up_page = opage %}
                 {% break %}
             {% endif %}
         {% endfor %}
     {% else %}
-        <p>case else</p>
 {% endcase %}
 
 {% if up_page %}
@@ -64,15 +65,15 @@
         <div class="nav">
             <span>
                 {% if prev_page %}
-                    <a href="{{ prev_page.url }}">{{ prev_page.title }}</a>
+                    <a href="{{ prev_page.url }}">⇦ {{ prev_page.title }}</a>
                 {% endif %}
             </span>
             <span>
-                <a href="{{ up_page.url }}">{{ up_page.title| default: site.title }}</a>
+                <a href="{{ up_page.url }}">⇧ {{ up_page.title| default: site.title }} ⇧</a>
             </span>
             <span>
                 {% if next_page %}
-                    <a href="{{ next_page.url }}">{{ next_page.title }}</a>
+                    <a href="{{ next_page.url }}">{{ next_page.title }} ⇨</a>
                 {% endif %}
             </span>
         </div>

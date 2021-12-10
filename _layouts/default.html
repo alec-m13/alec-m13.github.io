@@ -1,4 +1,11 @@
-{% assign category = site.data.categories[page.category] %}
+{% if page.category %}
+  {% for doc in site.documents %}
+    {% if doc.defines == page.category %}
+      {% assign category = doc %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {% capture title %}
   {% if page.title %}
@@ -14,7 +21,7 @@
   {% if page.description %}
     {{ page.description }}
   {% elsif category %}
-    {{ category.description }}
+    Learning {{ category.title }}: {{ category.description }}
   {% else %}
     {{ site.description | default: site.github.project_tagline }}
   {% endif %}
@@ -41,8 +48,6 @@
 </head>
 
 <body>
-  <p>{{ navmsg }}</p>
-  <p>{{ navloop }}</p>
   <div class="wrapper">
     <header>
       <h1 class="title">{{ title }}</h1>
