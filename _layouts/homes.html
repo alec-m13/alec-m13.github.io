@@ -3,14 +3,17 @@ layout: default
 nav: 'category'
 ---
 
-{{ content }}
-
 {% assign myposts = site.posts | where: 'category', page.defines %}
 
-<ul>
-    {% for post in myposts %}
-        <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-    {% endfor %}
-</ul>
+<div class="posts">
+    <h3>{{ page.title | default: page.defines }} Posts</h3>
+    <ul>
+        {% for post in myposts %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{{ content }}

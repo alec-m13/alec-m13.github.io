@@ -63,19 +63,28 @@
 {% if up_page %}
     {% capture navcontent %}
         <div class="nav">
-            <span>
+            <div>
                 {% if prev_page %}
-                    <a href="{{ prev_page.url }}">⇦ {{ prev_page.title }}</a>
+                    <a href="{{ prev_page.url }}" class="navbutton">
+                        <img src="/assets/images/top.png" class="leftarrow">
+                        <span>{{ prev_page.title }}</span>
+                    </a>
                 {% endif %}
-            </span>
-            <span>
-                <a href="{{ up_page.url }}">⇧ {{ up_page.title| default: site.title }} ⇧</a>
-            </span>
-            <span>
+            </div>
+            <div>
+                <a href="{{ up_page.url }}" class="navbutton">
+                    <img src="/assets/images/top.png">
+                    <span>{{ up_page.title| default: site.title }}</span>
+                </a>
+            </div>
+            <div>
                 {% if next_page %}
-                    <a href="{{ next_page.url }}">{{ next_page.title }} ⇨</a>
+                    <a href="{{ next_page.url }}" class="navbutton">
+                        <img src="/assets/images/top.png" class="rightarrow">
+                        <span>{{ next_page.title }}</span>
+                    </a>
                 {% endif %}
-            </span>
+            </div>
         </div>
     {% endcapture %}
 {% else %}

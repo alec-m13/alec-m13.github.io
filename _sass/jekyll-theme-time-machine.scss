@@ -151,6 +151,20 @@ p.tagline {
   flex: 1;
 }
 
+.navbutton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftarrow {
+  transform: rotate(-90deg);
+}
+
+.rightarrow {
+  transform: rotate(90deg);
+}
+
 .current-section {
   position: fixed;
   top: 0;
