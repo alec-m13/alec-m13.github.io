@@ -4,11 +4,11 @@ category: jekyll
 title:  "Navigation"
 ---
 
-I took an available GitHub Pages theme, the [Time Machine](https://pages-themes.github.io/time-machine/), and wanted to make some major customizations. The first, obvious one is to relativize dimensions so it works better on a range of screen sizes. The more custom customization is that I love the banner but as provided it has content for downloading the repository from GitHub. This is a great feature, sure, but I don't think it will be very useful for me. I will repurpose this banner to have navigational links.
+I took an available GitHub Pages theme, the [Time Machine](https://pages-themes.github.io/time-machine/), and wanted to make some major customizations. First was to relativize dimensions so it works better on a range of screen sizes. The more custom customization is that I love the banner but as provided it has content for downloading the repository from GitHub. This is a great feature, sure, but I don't think it will be very useful for me. I will repurpose this banner to have navigational links.
 
 Getting the banner to display navigational links is easy enough when I know what the links are. It was a simple matter of putting three `<span>` elements in and styling them with flexbox. The challenge was in getting the links themselves.
 
-I will be learning many technologies and presenting them here, and I want to separate them into different threads. I want the homepage to have a list of all the languages, and then clicking on them should take you to a list of the blog entries for that language. Jekyll is perfectly capable of categorizing posts into categories and that part was easy, but getting a `next` and `previous` button was not as straightforward as it seems.
+I will be learning many technologies and presenting them here, and I want to separate them into different threads. I want the homepage to have a list of all the languages, and then clicking on them should take you to a list of the blog entries for that language. Jekyll is perfectly capable of splitting posts into categories and that part was easy, but getting a `next` and `previous` button was not as straightforward as it seems.
 
 Jekyll has a built-in `next post` feature but it doesn't consider category, it's purely chronological. I found a post on a [Jekyll forum](https://talk.jekyllrb.com/t/how-to-link-to-next-and-previous-posts-for-same-blog-category/629) which helped immensely. This led to a quick crash course on [Liquid](https://shopify.github.io/liquid/) and [Jekyll collections](https://jekyllrb.com/docs/collections/) with which I was able to achieve my desired result.
 
