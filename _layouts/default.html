@@ -8,7 +8,9 @@
 {% endif %}
 
 {% capture title %}
-  {% if page.title %}
+  {% if page.defines %}
+    What is {{ page.title | default: page.defines }}?
+  {% elsif page.title %}
     {{ page.title }}
   {% elsif category %}
     Learning {{ category.title }}
@@ -76,7 +78,7 @@
 
       </div>
       <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a> (then heavily customized by me)</small>
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a> (and then customized by me)</small>
       </div>
     </footer>
   </div>
