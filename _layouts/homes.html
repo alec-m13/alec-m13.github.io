@@ -6,7 +6,7 @@ nav: 'category'
 {% assign myposts = site.posts | where: 'category', page.defines %}
 
 <div class="posts">
-    <h3>{{ page.title | default: page.defines }} Posts</h3>
+    <h1 class="subsection">{{ page.title | default: page.defines }} Posts</h1>
     <ul>
         {% for post in myposts %}
             <li>

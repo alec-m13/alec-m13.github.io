@@ -3,7 +3,7 @@
 /* Style */
 
 body {
-  font-size: 15px;
+  font-size: 93.75%; /* 15px out of default 16px */
   font-family: Arial, Arial, Helvetica, sans-serif;
   line-height: 1.5;
   background: #D1D1D1;
@@ -26,8 +26,8 @@ code, pre {
 }
 
 h1.title {
-  margin: 30px 20px 10px;
-  font-size: 60px;
+  font-size: 400%; /* default 60px */
+  margin: 0.5em 0.333em 0.167em;
   font-weight: bold;
   font-style: italic;
   font-family:Georgia, serif;
@@ -36,6 +36,7 @@ h1.title {
 
 .wrapper {
   width: 675px;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -46,23 +47,24 @@ h1.title {
 }
 
 p.tagline {
-  padding: 20px 20px 0;
+  padding: 1.176em 1.176em 0; /* 20px / 17px */
   color: #fff;
-  font-size: 17px;
+  font-size: 113.333%; /* 17px / 15px */
 }
 
 #main {
-  margin-top: 20px;
-  padding: 0 20px 90px;
+  margin-top: 1.333em; /* 20px / 15px */
+  padding: 0 1.333em 4em; /* 20px, 90 px / 15px */
   background-color: #fff;
 }
 
 .banner {
   background: #222;
   border: 5px solid #444;
-  padding: 10px;
-  margin: 0 -35px 20px;
-  position: relative;
+  padding: 0.667em; /* 10px/15px */
+  margin: 0 -2.333em 1.333em; /* -35px 20px / 15px */
+  position: sticky;
+  top: 1em;
   color: #63a52a;
 }
 
@@ -74,30 +76,30 @@ p.tagline {
   display: block;
   float: left;
   border-right: 1px solid #ddd;
-  padding-right: 5px;
+  padding-right: 0.333em; /* 5px / 15px */
 }
 .banner .watch-fork iframe.last {
   border-right: 0 none;
   padding-right: 0;
-  padding-left: 5px;
+  padding-left: 0.333em; /* 5px / 15px */
   border-left: 1px solid #fff;
 }
 .banner .watch-fork {
   overflow: hidden;
   float: right;
   background-color: #eee;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 0.333em; /* 5px / 15px */
+  border-radius: 0.2em; /* 3px / 15px */
 }
 
 .banner .blc {
-  border: 10px solid black;
+  border: 0.667em solid black; /* 10px / 15px */
   border-color: transparent transparent black;
   width: 0;
   height: 0;
   display: block;
   position: absolute;
-  bottom: -15px;
+  bottom: -1em;
   left: 0;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);  /* IE9 */
@@ -105,13 +107,13 @@ p.tagline {
 }
 
 .banner .trc {
-  border: 10px solid black;
+  border: 0.667em solid black; /* 10px / 15px */
   border-color:  black transparent transparent;
   width: 0;
   height: 0;
   display: block;
   position: absolute;
-  top: -15px;
+  top: -1em;
   right: 0;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);  /* IE9 */
@@ -121,7 +123,7 @@ p.tagline {
 .banner .avatar {
   border: 1px solid black;
   display: block;
-  padding: 4px;
+  padding: 0.267em; /* 4px / 15px */
   float: left;
 }
 
@@ -131,8 +133,8 @@ p.tagline {
 
 .banner a.code {
   background: transparent url(../images/code.png) no-repeat 0 2px;
-  padding-left: 35px;
-  margin-top: 8px;
+  padding-left: 2.333em; /* 35px / 15px */
+  margin-top: 0.533em; /* 8px / 15px */
   display: block;
   float: left;
   text-indent: 0;
@@ -165,56 +167,20 @@ p.tagline {
   transform: rotate(90deg);
 }
 
-.current-section {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  width: 693px;
-  margin-left: -352px;
-  background: #222;
-  border: 5px solid #444;
-  color: #fff;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
-}
-
-.current-section p {
-  padding: 5px 27px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.current-section a {
-  float: right;
-  text-indent: -10000px;
-  background: transparent url(../images/top.png) no-repeat 0 0;
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
-  margin-right: 12px;
-  margin-top: 12px;
-  opacity: 0.8;
-  filter:alpha(opacity=80);  /* IE 5-7 */
-  transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
-}
-
-.current-section a:hover {
-  opacity: 1;
-  filter:alpha(opacity=100);  /* IE 5-7 */
-}
-
-.current-section a.zip {
-  margin-right: 8px;
+.posts {
+  border-style: inset;
+  border-width: 3px 3px 3px 3px;
+  border-color: #444;
+  margin: 1em;
+  padding: 0.5em;
+  background-color:#f3f3f3;
 }
 
 a.zip,
 a.zip span {
   background: transparent url(../images/zip.png) no-repeat 0 0;
-  width: 30px;
-  height: 21px;
+  width: 2em; /* 30px / 15px */
+  height: 1.4em; /* 21px / 15px */
   display: inline-block;
   text-indent: -10000px;
   opacity: 0.8;
@@ -226,8 +192,8 @@ a.zip span {
 a.tar,
 a.tar span {
   background: transparent url(../images/tar.png) no-repeat 0 0;
-  width: 30px;
-  height: 21px;
+  width: 2em; /* 30px / 15px */
+  height: 1.4em; /* 21px / 15px */
   display: inline-block;
   text-indent: -10000px;
   opacity: 0.8;
@@ -238,8 +204,8 @@ a.tar span {
 
 a.code {
   background: transparent url(../images/code.png) no-repeat 0 2px;
-  width: 30px;
-  height: 21px;
+  width: 2em; /* 30px / 15px */
+  height: 1.4em; /* 21px / 15px */
   display: block;
   display: inline-block;
   text-indent: -10000px;
@@ -259,7 +225,6 @@ a.code:hover {
 a.download-button {
   border: 1px solid black;
   border-radius: 3px;
-  display: inline-block;
   text-indent: 0!important;
   width: auto;
   float: right;
@@ -269,52 +234,52 @@ a.download-button {
   background: -webkit-linear-gradient(top,  #37ADD4,  #1B657E);  /* Safari <=6.1, Android <= 4.3 */
   background: linear-gradient(to bottom,  #37ADD4,  #1B657E);
   height: auto;
-  margin-left: 10px;
+  margin-left: 0.667px; /* 10px / 15px */
 }
 
 a.download-button span {
-  background-position: 10px 5px;
+  background-position: 0.667em 0.333em; /* 10px 5px / 15px */
   width: auto;
   height: auto;
-  padding: 5px 10px;
-  padding-left: 45px;
+  padding: 0.333em 0.667em; /* 5px 10px / 15px */
+  padding-left: 3em; /* 45px / 15px */
   display: inline-block;
   text-indent: 0!important;
   color: #fff;
 }
 
 footer {
-  margin-bottom: 60px;
-  padding-bottom: 60px;
+  margin-bottom: 4em; /* 60px / 15px */
+  padding-bottom: 4em; /* 60px / 15px */
 }
 
 footer .owner {
   background: #222;
   border: 5px solid #444;
-  padding: 5px 15px;
-  margin: -67px -10px 35px;
+  padding: 0.333em 1em; /* 5px 15px / 15px */
+  margin: -4.467em -0.667em 2.333em; /* -67px -10px 35px / 15px */
   color: #d6d6d6;
 }
 
 footer .creds small {
   float: right;
-  font-size: 10px;
+  font-size: 0.667em; /* 10px / 15px */
   text-align: right;
-  margin-left: 15px;
+  margin-left: 1em;
 }
 
 footer .owner .avatar {
   background-color: #666;
   display: block;
-  margin: -19px 10px 0 0;
-  width: 60px;
+  margin: -1.267em 0.667em 0 0; /* -19px 10px / 15px */
+  width: 4em; /* 60px / 15px */
   float: left;
 }
 
 footer .owner img {
   display: block;
   border: 1px solid #2a2a2a;
-  margin: 5px;
+  margin: 0.333em; /* 5px / 15px */
 }
 
 footer .owner p {
@@ -322,7 +287,7 @@ footer .owner p {
 }
 
 footer .owner p a {
-  font-size: 16px;
+  font-size: 1.067em; /* 16px / 15px */
   font-style: italic;
 }
 
@@ -340,7 +305,7 @@ footer .owner p a {
 .markdown-body dl,
 .markdown-body table,
 .markdown-body blockquote {
-  margin-bottom: 20px;
+  margin-bottom: 1.333em; /* 20px / 15px */
 }
 
 .markdown-body h1,
@@ -350,36 +315,49 @@ footer .owner p a {
 .markdown-body h5,
 .markdown-body h6 {
   font-weight: bold;
+  border-top: 3px ridge #444;
+  padding-top: 0.3em;
+}
+
+.markdown-body h1.subsection,
+.markdown-body h2.subsection,
+.markdown-body h3.subsection,
+.markdown-body h4.subsection,
+.markdown-body h5.subsection,
+.markdown-body h6.subsection {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .markdown-body h1 {
-  font-size: 28px;
+  font-size: 1.867em; /* 28px / 15px */
 }
 
 .markdown-body h2 {
-  font-size: 24px;
+  font-size: 1.6em; /* 24px / 15px */
   color: #557398;
 }
 
 .markdown-body h3 {
-  font-size: 20px;
+  font-size: 1.333em; /* 20px / 15px */
 }
 
 .markdown-body h4 {
-  font-size: 18px;
+  font-size: 1.2em; /* 18px / 15px */
 }
 
 .markdown-body h5 {
-  font-size: 16px;
+  font-size: 1.067em; /* 16px / 15px */
 }
 
 .markdown-body pre {
-  padding: 10px 70px 10px 0;
-  margin-left: -20px;
-  margin-right: -20px;
+  padding: 1.183em 5.385em 1.183em 0; /* 10px 70px / 13px */
+  margin-left: -1.538em; /* 20px / 13px */
+  margin-right: -1.538em; /* 20px / 13px */
   font-family: 'Monaco', 'Lucida Console', monospace;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 86.667%; /* 13px / 15px */
+  line-height: 1.538em; /* 20px / 13px */
   box-shadow: inset 0 0 5px #000;
   word-wrap: break-word;
   background-color:#3b3b3b;
@@ -387,9 +365,9 @@ footer .owner p a {
 }
 
 .markdown-body pre.lines {
-  font-size: 12px;
-  margin:0 10px 0 -20px;
-  padding: 10px;
+  font-size: 92.308%; /* 12px / 13px */
+  margin:0 0.833em 0 -1.667em; /* 10px 20px / 13px */
+  padding: 0.833em; /* 10px / 13px */
   float:  left;
   display: block;
   text-align: right;
@@ -400,7 +378,7 @@ footer .owner p a {
 
 .markdown-body ul,
 .markdown-body ol {
-  padding-left: 30px;
+  padding-left: 2em; /* 30px / 15px */
 }
 
 .markdown-body ul {
@@ -415,14 +393,14 @@ footer .owner p a {
 .markdown-body li p,
 .markdown-body dd,
 .markdown-body dd p {
-  margin-bottom: 10px;
+  margin-bottom: 0.667em; /* 10px / 15px */
 }
 
 .markdown-body li pre,
 .markdown-body li pre.lines,
 .markdown-body dd pre,
 .markdown-body dd pre.lines {
-  margin-left: -35px;
+  margin-left: -2.333em; /* 35px / 15px */
 }
 
 .markdown-body dt {
@@ -431,13 +409,13 @@ footer .owner p a {
 }
 
 .markdown-body dd {
-  margin-left: 15px;
+  margin-left: 1em; /* 15px / 15px */
 }
 
 .markdown-body table {
-  width: 673px;
-  margin-left: -20px;
-  margin-right: -20px;
+  width: 95%;
+  margin-left: -1.333em; /* 20px / 15px */
+  margin-right: -1.333em; /* 20px / 15px */
 }
 
 .markdown-body tbody {
@@ -453,13 +431,13 @@ footer .owner p a {
 .markdown-body td {
   border-right: 1px solid #557398;
   border-bottom: 1px solid #557398;
-  padding: 5px;
+  padding: 0.333em; /* 5px / 15px */
 }
 
 .markdown-body td:first-child,
 .markdown-body th:first-child {
   width: 30%;
-  padding-left: 20px;
+  padding-left: 1.333em; /* 20px / 15px */
 }
 
 .markdown-body td:last-child {
@@ -467,10 +445,10 @@ footer .owner p a {
 }
 
 .markdown-body th {
-  font-size: 18px;
+  font-size: 1.2em; /* 18px / 15px */
   font-weight: bold;
   text-align: left;
-  padding: 5px;
+  padding: 0.278em; /* 5px / 18px */
 }
 
 .markdown-body tt {
@@ -482,20 +460,20 @@ footer .owner p a {
 .markdown-body blockquote {
   font-style: italic;
   font-family:Georgia, serif;
-  font-size: 17px;
+  font-size: 113.333%; /* 17px / 15px */
   border-top: 3px solid #333;
   border-bottom: 3px solid #333;
-  padding: 10px 20px;
-  padding-left: 50px;
+  padding: 0.588em 1.176em; /* 10px 20px / 17px */
+  padding-left: 2.941em; /* 50px / 17px */
 }
 
 .markdown-body blockquote:before {
   font-style: italic;
   font-family: Georgia, serif;
-  font-size: 90px;
-  height: 90px;
-  margin-left: -60px;
-  margin-top: -25px;
+  font-size: 5.294em; /* 90px / 17px */
+  height: 1em;
+  margin-left: -0.667em; /* 60px / 90px */
+  margin-top: -0.278em; /* 25px / 90px */
   content: "‟";
   display: block;
   float: left;
@@ -514,9 +492,9 @@ footer .owner p a {
   box-shadow: inset 0 -1px 0 #959da5;
   color: #444d56;
   display: inline-block;
-  font-size: 11px;
-  line-height: 10px;
-  padding: 3px 5px;
+  font-size: 73.333%; /* 11px / 15px */
+  line-height: 0.909em; /* 10px / 11px */
+  padding: 0.273em 0.455em; /* 3px 5px / 11px */
   vertical-align: middle;
 }
 

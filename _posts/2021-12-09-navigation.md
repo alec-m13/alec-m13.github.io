@@ -4,7 +4,7 @@ category: jekyll
 title:  "Navigation"
 ---
 
-I took an available GitHub Pages theme, the [Time Machine](https://pages-themes.github.io/time-machine/), and wanted to make one major customization. I love the banner but as provided it has content for downloading the repository from GitHub. This is a great feature, sure, but I don't think it will be very useful for me. I will repurpose this banner to have navigational links.
+I took an available GitHub Pages theme, the [Time Machine](https://pages-themes.github.io/time-machine/), and wanted to make some major customizations. The first, obvious one is to relativize dimensions so it works better on a range of screen sizes. The more custom customization is that I love the banner but as provided it has content for downloading the repository from GitHub. This is a great feature, sure, but I don't think it will be very useful for me. I will repurpose this banner to have navigational links.
 
 Getting the banner to display navigational links is easy enough when I know what the links are. It was a simple matter of putting three `<span>` elements in and styling them with flexbox. The challenge was in getting the links themselves.
 
