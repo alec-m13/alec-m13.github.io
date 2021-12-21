@@ -2,6 +2,7 @@
 defines: tictactoepology
 title: 'Tic-Tac-Toe-pology'
 description: 'Playing board games by applying local Turing machines to topological manifolds.'
+inventor: me
 ---
 
 I wanted to learn front end development by learning Angular, but I didn't want it to be too simple. I wanted a project I could be proud of. So I came up with Tic-Tac-Toe-pology. Now it's exploded to be very not-simple, well beyond the point of reasonableness. But it's just too fun to resist.
