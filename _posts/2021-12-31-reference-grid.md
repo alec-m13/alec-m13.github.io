@@ -14,7 +14,7 @@ We can get into the formal details later but the point is to have a coordinate s
 
 The total order allows for use of SortedSets to power the underlying machinery, offering an exponential increase in time efficiency over unsorted sets because of binary searches.
 
-Tiles have neighbors and these are declared by use of the unit sphere. The unit sphere is all positions which are adjacent to the origin. It can also be thought of as the set of directions. It must be closed under negating: any direction has an opposite direction which is itself a direction and hence a position in the unit sphere. It's theoretically possible to define the unit sphere in terms of a distance function, but for copmutational simplicity we require that the end user provides the unit sphere directly when constructing a ReferenceGrid.
+Tiles have neighbors and these are declared by use of the unit sphere. The unit sphere is all positions which are adjacent to the origin. It can also be thought of as the set of directions. It must be closed under negating: any direction has an opposite direction which is itself a direction and hence a position in the unit sphere. It's theoretically possible to define the unit sphere in terms of a distance function, but for copmutational simplicity we require that the end user provides the unit sphere directly when constructing a ReferenceGrid. This induces a distance: the magnitude of a point is the miniimal number of translations it takes to get to that point following directions in the unit sphere.
 
 Translation (and the information extractable from its structure) defines the shape of tiles, at least theoretically. Tiles also have orientations, but how are these declared?
 
@@ -46,7 +46,9 @@ Call the set of coordinates G. The user can't define G since it might be an infi
 
 - Define the binary operation + on G x G by a + b := T(-a, b). It must be that G is a group under + with identity 0.
 
-The unit sphere is defined as a set of coordinates. It must be a minimal (monoidal) generating set of G under + and it must be closed under -. That is, every element of G (except the origin) must be representable as a sum x1 + x1 + ... + xn where each xi is in the unit sphere, removing any element from the unit sphere breaks this generating property, and for each x in the sphere -x must also be in the sphere.
+The unit sphere is defined as a set of coordinates. It must be a (monoidal) generating set of G under + and it must be closed under -. That is, 1) every element of G (except the origin) must be representable as a sum x1 + x1 + ... + xn where each xi is in the unit sphere and 2) for each x in the sphere -x must also be in the sphere.
+
+The sphere induces a distance on G (via magnitudes): The magnitude of an element is the minimal length of the generating sum expression over elements from the unit sphere. In other words, the magnitude is the minimal number of steps it takes to reach that element from the origin going in the directions of the unit sphere.
 
 The full group of orientations is the group of automorphisms of G. Necessarily they fix the unit sphere. The orientations presented by the user must be a subgroup of the full group of orientations. Why subgroup instead of just all of them? In case the user doesn't want to allow for reflections or something like that.
 
